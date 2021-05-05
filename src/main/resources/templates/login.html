@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+ <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+</head>
+<body>
+	<form  th:method="post" th:action="@{/user/login}">
+		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/> 
+		UserName:<input type="text" name="username"/>
+		<br/>
+		PassWord:<input type="text" name="password"/>
+		<br/>
+		AutoLogin:<input type="checkbox" name="remember-me"/>
+		<br/>
+		<input type="submit" value="login"/>
+	</form>
+</body>
+</html>
